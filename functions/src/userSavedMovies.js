@@ -61,9 +61,3 @@ export async function updateOneMovieToDeleted(req, res) {
     });
   res.send("Movie removed from list.");
 }
-
-// export async function removeOneMovie(req, res) {
-//   const { movieId } = req.params;
-//   await userSavedMovies.findOneAndDelete({ _id: new ObjectId(movieId) });
-//   res.status(203).send("Movie removed from list.");
-// }
