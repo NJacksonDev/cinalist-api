@@ -30,7 +30,7 @@ app.get("/usersavedmovies/inprogress", getAllMoviesInProgress);
 app.get("/usersavedmovies/watched", getAllMoviesWatched);
 
 app.patch(
-  "/usersavedmovies/towatch/movetoinporgress",
+  "/usersavedmovies/towatch/movetoinprogress",
   updateOneMovieToInProgress
 );
 app.patch("/usersavedmovies/towatch/movetowatched", updateOneMovieToWatched);
