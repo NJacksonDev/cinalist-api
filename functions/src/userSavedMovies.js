@@ -6,8 +6,9 @@ export async function addOneMovie(req, res) {
 }
 
 export async function getAllMoviesToWatch(req, res) {
+  const { uid } = req.body;
   const toWatchCollection = await userSavedMovies
-    .find({ status: "to watch", deleted: { $ne: "true" } })
+    .find({ status: "to watch", deleted: { $ne: "true" }, uid: uid })
     .toArray();
   res.send(toWatchCollection);
 }
