@@ -6,7 +6,7 @@ export async function addOneMovie(req, res) {
 }
 
 export async function getAllMoviesToWatch(req, res) {
-  const { uid } = req.body;
+  const { uid } = req.params;
   const toWatchCollection = await userSavedMovies
     .find({ status: "to watch", deleted: { $ne: "true" }, uid: uid })
     .toArray();
@@ -14,15 +14,17 @@ export async function getAllMoviesToWatch(req, res) {
 }
 
 export async function getAllMoviesInProgress(req, res) {
+  const { uid } = req.params;
   const inProgressCollection = await userSavedMovies
-    .find({ status: "in progress", deleted: { $ne: "true" } })
+    .find({ status: "in progress", deleted: { $ne: "true" }, uid: uid })
     .toArray();
   res.send(inProgressCollection);
 }
 
 export async function getAllMoviesWatched(req, res) {
+  const { uid } = req.params;
   const watchedCollection = await userSavedMovies
-    .find({ status: "watched", deleted: { $ne: "true" } })
+    .find({ status: "watched", deleted: { $ne: "true" }, uid: uid })
     .toArray();
   res.send(watchedCollection);
 }

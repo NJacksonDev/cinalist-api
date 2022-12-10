@@ -25,9 +25,9 @@ app.get("/movies", getOneMovie);
 
 app.post("/usersavedmovies", addOneMovie);
 
-app.get("/usersavedmovies/towatch", getAllMoviesToWatch);
-app.get("/usersavedmovies/inprogress", getAllMoviesInProgress);
-app.get("/usersavedmovies/watched", getAllMoviesWatched);
+app.get("/usersavedmovies/towatch/:uid", getAllMoviesToWatch);
+app.get("/usersavedmovies/inprogress/:uid", getAllMoviesInProgress);
+app.get("/usersavedmovies/watched/:uid", getAllMoviesWatched);
 
 app.patch(
   "/usersavedmovies/towatch/movetoinprogress",
