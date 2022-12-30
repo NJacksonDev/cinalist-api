@@ -1,5 +1,5 @@
 ## API
-A minimal, secure RESTFUL api created with Node.js and Express. 
+A RESTFUL api created with Node.js and Express. 
 
 ## Installation
 
